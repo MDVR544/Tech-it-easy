@@ -1,0 +1,33 @@
+.informationCards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.salesCard{
+    display: flex;
+    background-color: springgreen;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.purchasedCard{
+    display: flex;
+    background-color: cornflowerblue;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.toSellCard{
+    display: flex;
+    background-color: indianred;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
