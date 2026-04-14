@@ -1,6 +1,6 @@
-import {inventory} from "../../constants/inventory.js";
+import {bestSellingTv} from "../../constants/inventory.js";
 
 function tvPricing(){
-    return `€${inventory[0].price},-`;
+    return `€${bestSellingTv.price},-`;
 }
 export default tvPricing;

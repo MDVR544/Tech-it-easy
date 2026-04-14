@@ -1,9 +1,9 @@
-import {inventory} from "../../constants/inventory.js";
+import {bestSellingTv} from "../../constants/inventory.js";
 
 
 
     function tvInformation(){
-        return `${inventory[0].brand} ${inventory[0].type} ${inventory[0].name}`;
+        return `${bestSellingTv.brand} ${bestSellingTv.type} ${bestSellingTv.name}`;
     }
     export default tvInformation;
 

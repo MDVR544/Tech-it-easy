@@ -1,42 +1,25 @@
 import './App.css';
-import {inventory} from "./constants/inventory.js";
+import {bestSellingTv, inventory} from "./constants/inventory.js";
 import totalSold from "./Helpers/TotalSales/Soldcalculator.js"
 import totalPurchased from "./Helpers/totalPurchased/Purchasedcalculator.jsx";
 import amountToSell from "./Helpers/AmountToSell/ToSellCalculator.jsx";
 import tvInformation from "./Helpers/TVname/TVname.jsx";
 import tvPricing from "./Helpers/TVpricing/TVpricing.jsx";
+import tvDimensionsCalculator from "./Helpers/TVDimensions/tvDimensionsCalculator.jsx";
 
-//Opdracht 2a: Maak een helperfunctie die een string genereert voor de naam van één tv en deze teruggeeft
-// in het format [merk] [type] - [naam] zoals Philips 43PUS6504/12 - 4K TV of NIKKEI NH3216SMART - HD smart TV.
-//
-// Opdracht 2b: Maak een helperfunctie die de prijs van één tv als
-// parameter verwacht (zoals 379 of 159) teruggeeft in het format €379,- of €159,-.
-//
-// Opdracht 2c: Maak een helperfunctie die een string genereert voor alle beschikbare schermgroottes van één tv.
-// De functie geeft dit terug in het format:
-//[schermgrootte] inches ([schermgrootte omgerekend]cm) | [schermgrootte] inches ([schermgrootte omgerekend]cm) etc.
-//Als een tv maar één schermgrootte heeft ([32]) wordt de output 32 inch (81 cm).
-//Wanneer een tv vier schermgroottes heeft ([43, 50, 55, 58]) wordt de output 43 inch (109 cm) | 50 inch (127 cm) | 58 inch (147 cm).
-// Rond altijd af op hele centimeters. Test goed of dit werkt met verschillende tv's!
 
 
 function App() {
-    function tvDimensionsCalculator(){
-        let tvDimensions = 0
-        // maak variabelen voor de tv sizes in inches
-        // maak een variabelen voor de tv sizes in cm dus met een * 2.54 let op dat je eindigd op hele centimeters
-        //
 
-        for (let i = 0; i < inventory.length; i++) {
-
-            tvDimensions = `${inventory[0].availableSizes}`;
-
-        }
-
-
-return tvDimensions;
+    function mostSold(){
+        console.log("Meest verkocht eerst")
     }
-
+    function cheapestFirst(){
+        console.log("Goedkoopste eerst")
+    }
+    function bestForSports(){
+        console.log("Meest geschikt voor sport eerst")
+    }
 
     return (
         <>
@@ -55,12 +38,26 @@ return tvDimensions;
                     <p>{amountToSell()}</p>
                 </div>
             </div>
-            <p>{tvInformation()}</p>
-            <p>{tvPricing()}</p>
-            <p>{tvDimensionsCalculator()}</p>
+            <div className="bestSellingTV">
+                <img src={bestSellingTv.sourceImg} alt="Afbeelding van TV"/>
+                <p>{tvInformation()}</p>
+                <p>{tvPricing()}</p>
+                <p>{tvDimensionsCalculator()}</p>
+                <p>
+                    <img src="assets/check.png" alt="Check icon"/> wifi
+                    <img src="assets/minus.png" alt="Not icon"/> speech
+                    <img src="assets/check.png" alt="Check icon"/> hdr
+                    <img src="assets/check.png" alt="Check icon"/> bluetooth
+                    <img src="assets/minus.png" alt="Not icon"/> ambilight
+                </p>
+            </div>
+            <div className="buttons">
+                <button type="button" onClick={mostSold}>Meest verkocht eerst</button>
+                <button type="button" onClick={cheapestFirst}>Goedkoopste eerst</button>
+                <button type="button" onClick={bestForSports}>Meest geschikt voor sport eerst</button>
+            </div>
         </>
     )
-
 
 }
 
