@@ -6,6 +6,10 @@ import amountToSell from "./Helpers/AmountToSell/ToSellCalculator.jsx";
 import tvInformation from "./Helpers/TVname/TVname.jsx";
 import tvPricing from "./Helpers/TVpricing/TVpricing.jsx";
 import tvDimensionsCalculator from "./Helpers/TVDimensions/tvDimensionsCalculator.jsx";
+import checkIcon from "./assets/check.png";
+import minusIcon from"./assets/minus.png";
+import showOutcomeInConsole from './constants/oefenbestand.js';
+
 
 
 
@@ -20,6 +24,8 @@ function App() {
     function bestForSports(){
         console.log("Meest geschikt voor sport eerst")
     }
+
+showOutcomeInConsole()
 
     return (
         <>
@@ -44,11 +50,11 @@ function App() {
                 <p>{tvPricing()}</p>
                 <p>{tvDimensionsCalculator()}</p>
                 <p>
-                    <img src="assets/check.png" alt="Check icon"/> wifi
-                    <img src="assets/minus.png" alt="Not icon"/> speech
-                    <img src="assets/check.png" alt="Check icon"/> hdr
-                    <img src="assets/check.png" alt="Check icon"/> bluetooth
-                    <img src="assets/minus.png" alt="Not icon"/> ambilight
+                    <img src={checkIcon} alt="Check icon"/> wifi
+                    <img src={minusIcon} alt="Not icon"/> speech
+                    <img src={checkIcon} alt="Check icon"/> hdr
+                    <img src={checkIcon} alt="Check icon"/> bluetooth
+                    <img src={minusIcon} alt="Not icon"/> ambilight
                 </p>
             </div>
             <div className="buttons">
