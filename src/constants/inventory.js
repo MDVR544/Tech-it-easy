@@ -1,5 +1,6 @@
 // BEST VERKOPENDE TV
 export const bestSellingTv = {
+    id: 'tv001',
     type: 'UHD 55AU7040',
     name: 'Crystal',
     brand: 'Samsung',
@@ -39,6 +40,7 @@ export const bestSellingTv = {
 // STATISCHE VOORRAAD TV'S
 export let inventory = [
     {
+        id: 'tv002',
         type: '43PUS6504/12',
         name: '4K TV',
         brand: 'Philips',
@@ -75,6 +77,7 @@ export let inventory = [
         sold: 2,
     },
     {
+        id: 'tv003',
         type: 'NH3216SMART',
         name: 'HD smart TV',
         brand: 'Nikkei',
@@ -111,6 +114,7 @@ export let inventory = [
         sold: 4,
     },
     {
+        id: 'tv004',
         type: 'QE55Q60T',
         name: '4K QLED TV',
         brand: 'Samsung',
@@ -147,6 +151,7 @@ export let inventory = [
         sold: 0,
     },
     {
+        id: 'tv005',
         type: '43HAK6152',
         name: 'Ultra HD SMART TV',
         brand: 'Hitachi',
@@ -183,6 +188,7 @@ export let inventory = [
         sold: 5,
     },
     {
+        id: 'tv006',
         type: '50PUS7304/12',
         name: 'The One 4K TV',
         brand: 'Philips',
@@ -219,6 +225,7 @@ export let inventory = [
         sold: 3,
     },
     {
+        id: 'tv007',
         type: '55PUS7805',
         name: '4K LED TV',
         brand: 'Philips',
@@ -255,6 +262,7 @@ export let inventory = [
         sold: 3,
     },
     {
+        id: 'tv008',
         type: 'B2450HD',
         name: 'LED TV',
         brand: 'Brandt',
@@ -291,6 +299,7 @@ export let inventory = [
         sold: 8,
     },
     {
+        id: 'tv009',
         type: '32WL1A63DG',
         name: 'HD TV',
         brand: 'Toshiba',

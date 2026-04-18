@@ -1,12 +1,9 @@
-import {bestSellingTv} from "../../constants/inventory.js";
-
-function tvDimensionsCalculator(){
-    let tv = bestSellingTv;
-    let tvDimensionsInches = tv.availableSizes;
+export function tvDimensionsCalculator(tvSizes){
+    let tvDimensionsInches = tvSizes.availableSizes;
 
     let tvDimensions = '';
 
-    for (let i = 0; i < tv.availableSizes.length; i++) {
+    for (let i = 0; i < tvSizes.availableSizes.length; i++) {
         let size = tvDimensionsInches;
         let cm = Math.round(size[i] * 2.54);
 
@@ -20,4 +17,3 @@ function tvDimensionsCalculator(){
     return tvDimensions;
 }
 
-export default tvDimensionsCalculator

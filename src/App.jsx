@@ -3,13 +3,14 @@ import {bestSellingTv, inventory} from "./constants/inventory.js";
 import totalSold from "./Helpers/TotalSales/Soldcalculator.js"
 import totalPurchased from "./Helpers/totalPurchased/Purchasedcalculator.jsx";
 import amountToSell from "./Helpers/AmountToSell/ToSellCalculator.jsx";
-import tvInformation from "./Helpers/TVname/TVname.jsx";
-import tvPricing from "./Helpers/TVpricing/TVpricing.jsx";
-import tvDimensionsCalculator from "./Helpers/TVDimensions/tvDimensionsCalculator.jsx";
+import {tvInformation, tvInformationBestselling} from "./Helpers/TVname/TVname.jsx";
+import {tvPricing, tvPricingBestSelling} from "./Helpers/TVpricing/TVpricing.jsx";
+import {tvDimensionsCalculator} from "./Helpers/TVDimensions/tvDimensionsCalculator.jsx";
 import checkIcon from "./assets/check.png";
 import minusIcon from"./assets/minus.png";
 import showOutcomeInConsole from './constants/oefenbestand.js';
 
+// showOutcomeInConsole()
 
 
 
@@ -25,7 +26,8 @@ function App() {
         console.log("Meest geschikt voor sport eerst")
     }
 
-showOutcomeInConsole()
+
+
 
     return (
         <>
@@ -44,19 +46,47 @@ showOutcomeInConsole()
                     <p>{amountToSell()}</p>
                 </div>
             </div>
-            <div className="bestSellingTV">
+            <article className="tvArticle">
                 <img src={bestSellingTv.sourceImg} alt="Afbeelding van TV"/>
-                <p>{tvInformation()}</p>
-                <p>{tvPricing()}</p>
-                <p>{tvDimensionsCalculator()}</p>
-                <p>
-                    <img src={checkIcon} alt="Check icon"/> wifi
-                    <img src={minusIcon} alt="Not icon"/> speech
-                    <img src={checkIcon} alt="Check icon"/> hdr
-                    <img src={checkIcon} alt="Check icon"/> bluetooth
-                    <img src={minusIcon} alt="Not icon"/> ambilight
-                </p>
-            </div>
+                <p>{tvInformationBestselling()}</p>
+                <p>{tvPricingBestSelling()}</p>
+                <p>{tvDimensionsCalculator(bestSellingTv)}</p>
+                <ul>
+                    <li><img src={checkIcon} alt="Check icon"/> wifi</li>
+                    <li><img src={minusIcon} alt="Not icon"/> speech</li>
+                    <li><img src={checkIcon} alt="Check icon"/> hdr</li>
+                    <li><img src={checkIcon} alt="Check icon"/> bluetooth</li>
+                    <li><img src={minusIcon} alt="Not icon"/> ambilight</li>
+                </ul>
+            </article>
+        <div>
+            <ul className= "brandList">
+                {inventory.map((tvBrand) => {
+                return <li key={tvBrand.id}>{tvBrand.brand}</li>;
+            })}
+            </ul>
+        </div>
+
+            <article className="tvArticle">
+                {inventory.map((tvInformationArticle) => {
+                    return <li key={tvInformationArticle.id}>
+                        <img src={tvInformationArticle.sourceImg} alt="Afbeelding van TV"/>
+                        <p>{tvInformation(tvInformationArticle)}</p>
+                        <p>{tvPricing(tvInformationArticle)}</p>
+                        <p>{tvDimensionsCalculator(tvInformationArticle)}</p>
+                    </li>
+                    }
+                )}
+                {/*<ul>*/}
+                {/*    <li><img src={checkIcon} alt="Check icon"/> wifi</li>*/}
+                {/*    <li><img src={minusIcon} alt="Not icon"/> speech</li>*/}
+                {/*    <li><img src={checkIcon} alt="Check icon"/> hdr</li>*/}
+                {/*    <li><img src={checkIcon} alt="Check icon"/> bluetooth</li>*/}
+                {/*    <li><img src={minusIcon} alt="Not icon"/> ambilight</li>*/}
+                {/*</ul>*/}
+            </article>
+
+
             <div className="buttons">
                 <button type="button" onClick={mostSold}>Meest verkocht eerst</button>
                 <button type="button" onClick={cheapestFirst}>Goedkoopste eerst</button>
